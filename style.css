@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@media (max-width: 600px) {
+    #section1 h1{
+        padding-left: 15px;
+    }
+    #section2 h2{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    #section3 h1{
+        padding-left: 35px;
+    }
+    #section4 h2{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .section4Boxes{
+        display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    }
+}
+
+@keyframes textOpacity {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+}
+@keyframes textPosition {
+    from {margin-left: 60px;}
+    to {margin-left: 0;}
+}
+@keyframes inputPosition {
+    from {margin-top: 60px;}
+    to {margin-top: 0;}
+}
+@keyframes colorBox {
+    0%   {border-color: black;}
+  20%  {border-color: blue;}
+  40%  {border-color: red;}
+  60% {border-color: green;}
+  80% {border-color: yellow;}
+  100% {border-color: grey;}
+}
+
+.boxCanvas{
+    border: 5px solid transparent;
+    border-image-slice: 1;
+    animation-name: colorBox;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.question{
+    animation-name: textOpacity, textPosition;
+    animation-duration: 2s;
+}
+
+.inputAnimation{
+    animation-name: textOpacity, inputPosition;
+    animation-duration: 2s;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 35px;
+}
+
+#section1{
+    background-color: white;
+    width: 100%;
+    overflow: hidden;
+}
+#section2{
+    background-color: aqua;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section3{
+    background-color: white;
+    width: 100%;
+    transition: background-color 1s;
+}
+#section4{
+    background-color: aqua;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#changeText{
+    opacity: 0%;
+    transition: opacity 1s;
+    color: black;
+    word-wrap: break-word;
+}
+#backtext{
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+body{
+    margin: 0;
+    font-family: Roboto;
+}
