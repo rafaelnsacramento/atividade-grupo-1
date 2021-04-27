@@ -71,3 +71,64 @@ function results(){
     //Se o usuário não respondeu tudo, isso ocorre:
     else alert("Por favor, responda todas as questões!");
 }
+
+function calcular(){ // Minha alteração da página no js
+    var calc = document.getElementById("calc").value // Pega váriavel calc
+    var operador = ["+","-","*","/"]
+    var calc_1 = ""
+    var calc_2 = ""
+    var operador_ = ""
+
+    var x = 0;
+    var y = 0;
+
+    if (calc) { 
+        for (let i = 0; i < 4; i++) {
+            if (calc.includes(operador[i])){
+                calc_1 = calc.split(operador[i])[0]
+                calc_2 = calc.split(operador[i])[1]
+                operador_ = operador[i]
+            }
+        }
+
+        x = Number(calc_1)
+        y = Number(calc_2)
+
+        if(!isNaN(x) && !isNaN(y)){ //Verificando se a entrada tem dois números
+            switch(operador_){
+
+                case "+":
+                    res = x + y
+                    document.getElementById('calcReturn').innerHTML = "O resultado é " + res
+                    break
+    
+                case "-":
+                    res = x - y
+                    document.getElementById('calcReturn').innerHTML = "O resultado é " + res
+                    break
+    
+                case "*":
+                    res = x * y
+                    document.getElementById('calcReturn').innerHTML = "O resultado é " + res
+                    break
+    
+                case "/":
+                    res = x / y
+                    document.getElementById('calcReturn').innerHTML = "O resultado é " + res
+                    break
+                default:
+                    alert("Por favor, insira uma fórmula válida"); //Caso não tenha posto um operador válido
+            }
+        }
+        else { //Se não tiver dois números, emite um alerta informado qual campo está errado
+            if(isNaN(x) && isNaN(y)) alert (x + " nem " + y +  " são um número válido!")
+            else if(isNaN(x))   alert(x + " não é um número válido!");
+            else if(isNaN(y)) alert(calc_2 + " não é um número válido")
+        }
+        
+    }
+
+    else alert("Campo vazio!") //Se deixou o campo vazio
+
+
+}
